@@ -1,6 +1,6 @@
 <?php
 
-namespace OnlyJaiden\ScrimAS\Checks\Movement;
+namespace OnlyJaiden\UrityAC\Checks\Movement;
 
 use pocketmine\math\Vector3;
 use pocketmine\event\Listener;
@@ -8,7 +8,7 @@ use pocketmine\event\player\PlayerMoveEvent;
 use pocketmine\entity\effect\VanillaEffects;
 use pocketmine\Server;
 use pocketmine\player\Player;
-use OnlyJaiden\ScrimAS\Alert;
+use OnlyJaiden\UrityAC\Alert;
 
 class Speed implements Listener{
     public function onPlayerMove(PlayerMoveEvent $event): void{

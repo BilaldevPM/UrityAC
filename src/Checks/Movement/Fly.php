@@ -1,6 +1,6 @@
 <?php
 
-namespace OnlyJaiden\ScrimAS\Checks\Movement;
+namespace OnlyJaiden\UrityAC\Checks\Movement;
 
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerMoveEvent;
@@ -10,7 +10,7 @@ use pocketmine\entity\effect\VanillaEffects;
 use pocketmine\entity\effect\EffectManager;
 use pocketmine\entity\effect\EffectInstance;
 use pocketmine\data\bedrock\EffectIds;
-use OnlyJaiden\ScrimAS\Alert;
+use OnlyJaiden\UrityAC\Alert;
 
 class Fly implements Listener{
   
