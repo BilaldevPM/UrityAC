@@ -1,17 +1,17 @@
 ---
-name: ScrimAS
-version: 0.6.0
-main: OnlyJaiden\ScrimAS\Main
+name: UrityAC
+version: 1.0.0
+main: OnlyJaiden\UrityAC\Main
 api: 4.0.0
-src-namespace-prefix: OnlyJaiden\ScrimAS
+src-namespace-prefix: OnlyJaiden\UrityAC\ScrimAS
 
 commands:
   alerts:
     description: Stop getting annoying alerts.
-    permission: ScrimAS.alerts
+    permission: UrityAC.alerts
 
 permissions:
-  ScrimAS.alerts:
+  UrityAC.alerts:
     default: op
     description: Get alerts from ac.
 ...
