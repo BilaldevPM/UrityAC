@@ -26,7 +26,7 @@
 
 declare(strict_types = 1);
 
-namespace OnlyJaiden\ScrimAS\libs\CortexPE\DiscordWebhookAPI;
+namespace OnlyJaiden\UrityAC\libs\CortexPE\DiscordWebhookAPI;
 
 
 class Embed {

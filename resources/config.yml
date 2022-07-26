@@ -9,4 +9,4 @@ webhook.url: ""
 
 # Combat
 AutoClicker: true
-MaxCPS: 16
+MaxCPS: 25
