@@ -2,8 +2,8 @@
 name: UrityAC
 version: 1.0.0
 main: OnlyJaiden\UrityAC\Main
-api: 4.0.0
-src-namespace-prefix: OnlyJaiden\UrityAC\ScrimAS
+api: 4.2.4
+src-namespace-prefix: OnlyJaiden\UrityAC
 
 commands:
   alerts:
