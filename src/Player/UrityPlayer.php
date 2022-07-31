@@ -11,7 +11,7 @@ class UrityPlayer{
     private $blockAbove = false;
 
     public function getPlayerBlockAbove() :bool{
-        ruturn $this->blockAbove;
+        return $this->blockAbove;
     }
 
     public function setPlayerBlockAbove(bool $info) :void{
