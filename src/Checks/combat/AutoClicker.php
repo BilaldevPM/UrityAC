@@ -18,6 +18,7 @@ class AutoClicker implements Listener{
 
     private int $maxCps;
     private int $cps;
+    private int $resetCpsAt;
 
     public function init(): void{
         $config = Main::getInstance()->getConfig();
@@ -31,9 +32,9 @@ class AutoClicker implements Listener{
 
     public function inbound(ServerboundPacket $packet): void{
         if(($packet instanceof InventoryTransactionPacket && $packet->trData instanceof UseItemOnEntityTransactionData) || ($packet instanceof LevelSoundEventPacket && $packet->sound === LevelSoundEvent::ATTACK_NODAMAGE)) {
-            $this->data->cps++;
-            if(($tick = $this->getTick()) > $this->data->resetCpsAt + 20) {
-                $this->data->resetCpsAt = $tick;
+            $this->cps++;
+            if(($tick = $this->getTick()) > $this->resetCpsAt + 20) {
+                $this->resetCpsAt = $tick;
                 if(($cps = $this->cps) >= $this->maxCps) {
                     $report = new Alert;
                     $report->alert("AutoClicker CPS: $cps", $player->getName());
