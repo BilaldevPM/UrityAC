@@ -10,3 +10,6 @@ webhook.url: ""
 # Movement
 speed.enable: true
 speed.max: 8.0
+
+AutoClicker: true
+MaxCPS: 1

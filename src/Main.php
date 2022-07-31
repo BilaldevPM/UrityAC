@@ -29,7 +29,7 @@ class Main extends PluginBase{
         $this->registerEvents(new Fly());
         $this->registerEvents(new AutoClicker());
         // Player Event Handler
-        $this->registerEvents(new PlayerEvent(), $this);
+        $this->registerEvents(new PlayerEvent());
     }
     
     private function registerEvents(Listener $listener): void {

@@ -12,6 +12,7 @@ use pocketmine\network\mcpe\protocol\ServerboundPacket;
 use pocketmine\network\mcpe\protocol\types\inventory\UseItemOnEntityTransactionData;
 use pocketmine\network\mcpe\protocol\types\LevelSoundEvent;
 use OnlyJaiden\UrityAC\Alert;
+use OnlyJaiden\UrityAC\Main;
 
 class AutoClicker implements Listener{
 
