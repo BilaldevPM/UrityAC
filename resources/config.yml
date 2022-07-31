@@ -7,6 +7,6 @@ webhook.url: ""
 
 # Cheats
 
-# Combat
-AutoClicker: true
-MaxCPS: 16
+# Movement
+speed.enable: true
+speed.max: 8.0

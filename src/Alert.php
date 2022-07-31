@@ -15,7 +15,6 @@ use pocketmine\player\Player;
 class Alert {
 
   public function alert(string $cheat, string $player): void {
-    $config = Main::getInstance()->getConfig();
     $user = new User;
     foreach(Server::getInstance()->getOnlinePlayers() as $staff) {
       if($staff->hasPermission("UrityAC.alerts")) {

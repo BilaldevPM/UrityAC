@@ -31,14 +31,27 @@ class User{
              $staff->SendMessage($new->get("AntiCheat.prefix")." $player has been using $cheat.");
          }
     }
-    public static function getBaseMovementSpeed(Player $user) : float{
-        $p = $user->getPlayer();
-        $max = $p->isSprinting()
-            ? 0.29 
-            : 0.216;
-        $max += self::getPotionEffectLevel($p, Effect::SPEED) * 0.2;
 
-        return $max;
-    }
+    public function AbovePlayer(Player $player) : bool {
+
+        $level = $player->getWorld();
+        $posX = $player->getPosition()->x;
+        $posY = $player->getPosition()->y + 2;
+        $posZ = $player->getPosition()->z;
+
+        for ($xidx = $posX-1; $xidx <= $posX+1; $xidx = $xidx + 1)
+        {
+          for ($zidx = $posZ-1; $zidx <= $posZ+1; $zidx = $zidx + 1)
+          {
+            $pos   = new Vector3($xidx, $posY, $zidx);
+            $block = $level->getBlock($pos)->getId();
+            if ($block != BlockIds::AIR)
+            {
+              return false;
+            }
+          }
+        }
+        return true;
+      }
 
 }
