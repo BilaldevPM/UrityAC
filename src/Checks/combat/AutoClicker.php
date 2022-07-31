@@ -33,11 +33,11 @@ class AutoClicker implements Listener{
     public function inbound(ServerboundPacket $packet): void{
         if(($packet instanceof InventoryTransactionPacket && $packet->trData instanceof UseItemOnEntityTransactionData) || ($packet instanceof LevelSoundEventPacket && $packet->sound === LevelSoundEvent::ATTACK_NODAMAGE)) {
             $this->cps++;
-            if(($tick = $this->getTick()) > $this->resetCpsAt + 20) {
+            if(($tick = $packet->getTick()) > $this->resetCpsAt + 20) {
                 $this->resetCpsAt = $tick;
                 if(($cps = $this->cps) >= $this->maxCps) {
                     $report = new Alert;
-                    $report->alert("AutoClicker CPS: $cps", $player->getName());
+                    $report->alert("AutoClicker CPS: $cps", $packet->getPlayer()->getName());
                 }
                 $this->cps = 0;
             }
