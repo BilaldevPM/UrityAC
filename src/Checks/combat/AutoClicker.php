@@ -17,6 +17,7 @@ use OnlyJaiden\UrityAC\Main;
 class AutoClicker implements Listener{
 
     private int $maxCps;
+    private int $cps;
 
     public function init(): void{
         $config = Main::getInstance()->getConfig();
@@ -33,11 +34,11 @@ class AutoClicker implements Listener{
             $this->data->cps++;
             if(($tick = $this->getTick()) > $this->data->resetCpsAt + 20) {
                 $this->data->resetCpsAt = $tick;
-                if(($cps = $this->data->cps) >= $this->maxCps) {
+                if(($cps = $this->cps) >= $this->maxCps) {
                     $report = new Alert;
                     $report->alert("AutoClicker CPS: $cps", $player->getName());
                 }
-                $this->data->cps = 0;
+                $this->cps = 0;
             }
         }
     }
