@@ -31,5 +31,14 @@ class User{
              $staff->SendMessage($new->get("AntiCheat.prefix")." $player has been using $cheat.");
          }
     }
+    public static function getBaseMovementSpeed(Player $user) : float{
+        $p = $user->getPlayer();
+        $max = $p->isSprinting()
+            ? 0.29 
+            : 0.216;
+        $max += self::getPotionEffectLevel($p, Effect::SPEED) * 0.2;
+
+        return $max;
+    }
 
 }

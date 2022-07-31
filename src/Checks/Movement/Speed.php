@@ -9,36 +9,23 @@ use pocketmine\entity\effect\VanillaEffects;
 use pocketmine\Server;
 use pocketmine\player\Player;
 use OnlyJaiden\UrityAC\Alert;
+use OnlyJaiden\UrityAC\User;
 
 class Speed implements Listener{
-    public function onPlayerMove(PlayerMoveEvent $event): void{
-        $report = new Alert;
-        $player = $event->getPlayer();
-        $x = $event->getFrom()->getX() - $event->getTo()->getX();
-        //$y = $event->getFrom()->getY() - $event->getTo()->getY();
-        $z = $event->getFrom()->getZ() - $event->getTo()->getZ();
-        //Checks if player is moving too fast in X Cords
-        if(abs($x) >= 1.1) {
-            if(count($player->getEffects()->all()) == 0){
-                if($player->getAllowFlight() === true){
-                    return;
-                }
-                $report->alert("Speed", $player->getName());
-            } else {
-                return;
-            }
-        }
-        //Checks if player is moving too fast in Y Cords
-        if(abs($z) >= 1.1) {
-            if(count($player->getEffects()->all()) == 0){
-                if($player->getAllowFlight() === true){
-                    return;
-                }
-                $report->alert("Speed", $player->getName());
-            } else {
-                return;
-            }
-        }
+    public function onPacket(PacketReceiveEvent $e, User $user) {
+        if(!$e->equals(MovePlayerPacket))
+            return;
+            $player = $e->getPlayer();
+        $dist = hypot($player->velocity->getX(), $player->velocity->getZ());
+        $lastDist = hypot($player->lastVelocity->getX(), $player->lastVelocity->getZ());
 
+        $diff = abs($dist - $lastDist);
+
+        if($diff == 0
+                && !$player->getPlayer()->getAllowFlight()
+                && $dist > User::getBaseMovementSpeed($player)
+                && $player->groundTicks > 2) {
+            $report->alert("Speed", $player->getName());
+        }
     }
 }

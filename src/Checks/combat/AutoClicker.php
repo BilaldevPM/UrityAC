@@ -1,6 +1,6 @@
 <?php
 
-namespace OnlyJaiden\UrityAC\Checks\Movement;
+namespace OnlyJaiden\UrityAC\Checks\combat;
 
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerMoveEvent;
