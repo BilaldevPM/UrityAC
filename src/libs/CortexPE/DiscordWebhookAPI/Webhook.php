@@ -26,10 +26,10 @@
 
 declare(strict_types = 1);
 
-namespace OnlyJaiden\ScrimAS\libs\CortexPE\DiscordWebhookAPI;
+namespace OnlyJaiden\UrityAC\libs\CortexPE\DiscordWebhookAPI;
 
 
-use OnlyJaiden\ScrimAS\libs\CortexPE\DiscordWebhookAPI\task\DiscordWebhookSendTask;
+use OnlyJaiden\UrityAC\libs\CortexPE\DiscordWebhookAPI\task\DiscordWebhookSendTask;
 use pocketmine\Server;
 
 class Webhook {

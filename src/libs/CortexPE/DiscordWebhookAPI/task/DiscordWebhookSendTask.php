@@ -26,11 +26,11 @@
 
 declare(strict_types = 1);
 
-namespace OnlyJaiden\ScrimAS\libs\CortexPE\DiscordWebhookAPI\task;
+namespace OnlyJaiden\UrityAC\libs\CortexPE\DiscordWebhookAPI\task;
 
 
-use OnlyJaiden\ScrimAS\libs\CortexPE\DiscordWebhookAPI\Message;
-use OnlyJaiden\ScrimAS\libs\CortexPE\DiscordWebhookAPI\Webhook;
+use OnlyJaiden\UrityAC\libs\CortexPE\DiscordWebhookAPI\Message;
+use OnlyJaiden\UrityAC\libs\CortexPE\DiscordWebhookAPI\Webhook;
 use pocketmine\scheduler\AsyncTask;
 use pocketmine\Server;
 
