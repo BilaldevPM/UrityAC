@@ -6,7 +6,7 @@ use OnlyJaiden\UrityAC\Main;
 use pocketmine\utils\Config;
 
 
-class Player{
+class UrityPlayer{
 
     private $blockAbove = false;
 

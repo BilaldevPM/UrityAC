@@ -11,13 +11,13 @@ use pocketmine\world\World;
 // Player
 use pocketmine\event\player\PlayerMoveEvent;
 // Custom
-use OnlyJaiden\UrityAC\Player\player;
+use OnlyJaiden\UrityAC\Player\UrityPlayer;
 
 class PlayerEvent implements Listener{
 
     public function onPlayerMove(PlayerMoveEvent $event): void{
         $player = $event->getPlayer();
-        $blockAbovePlayer = new player;
+        $blockAbovePlayer = new UrityPlayer;
 
         $level = $player->getWorld();
         $posX = $player->getPosition()->x;
@@ -27,9 +27,9 @@ class PlayerEvent implements Listener{
         $pos = new Vector3($posX, $posY, $posZ);
         $block = $level->getBlock($pos)->getId();
         if ($block != BlockIds::AIR) {
-            return $blockAbovePlayer->setPlayerBlockAbove(true);
+            $blockAbovePlayer->setPlayerBlockAbove(true);
         } else {
-            return $blockAbovePlayer->setPlayerBlockAbove(false);
+            $blockAbovePlayer->setPlayerBlockAbove(false);
         }
     }
 }

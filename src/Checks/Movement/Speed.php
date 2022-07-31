@@ -12,7 +12,7 @@ use pocketmine\player\Player;
 // custom
 use OnlyJaiden\UrityAC\Alert;
 use OnlyJaiden\UrityAC\User;
-use OnlyJaiden\UrityAC\Player\player;
+use OnlyJaiden\UrityAC\Player\UrityPlayer;
 
 class Speed implements Listener{
 
@@ -23,7 +23,7 @@ class Speed implements Listener{
     public function PlayerMove(PlayerMoveEvent $event) {
         $config = Main::getInstance()->getConfig();
         $player = $event->getPlayer();
-        $data = new player;
+        $data = new UrityPlayer;
 
         if ($config->get("speed.enable") == false) return;
 
