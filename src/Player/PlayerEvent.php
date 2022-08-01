@@ -32,4 +32,22 @@ class PlayerEvent implements Listener{
             $blockAbovePlayer->setPlayerBlockAbove(false);
         }
     }
+
+    public function onPlayerMove(PlayerMoveEvent $event): void{
+        $player = $event->getPlayer();
+        $Urity = new UrityPlayer;
+
+        $level = $player->getWorld();
+        $posX = $player->getPosition()->x;
+        $posY = $player->getPosition()->y;
+        $posZ = $player->getPosition()->z;
+
+        $pos = new Vector3($posX, $posY, $posZ);
+        $block = $level->getBlock($pos)->getId();
+        if ($block == BlockIds::ICE || $block == BlockIds::BLUE_ICE || $block == BlockIds::PACKED_ICE || $block == BlockIds::FROSTED_ICE) {
+            $Urity->setPlayerBlockFast(true);
+        } else {
+            $Urity->setPlayerBlockFast(false);
+        }
+    }
 }

@@ -27,7 +27,8 @@ class Speed implements Listener{
         if (
             $player->getAllowFlight() || 
             $player->isSurvival() ||
-            $data->getPlayerBlockAbove()
+            $data->getPlayerBlockAbove() ||
+            $data->getPlayerBlockFast()
         ) return;
     }
 }

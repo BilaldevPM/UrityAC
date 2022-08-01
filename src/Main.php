@@ -6,7 +6,6 @@ namespace OnlyJaiden\UrityAC;
 
 use OnlyJaiden\UrityAC\Checks\Movement\Speed;
 use OnlyJaiden\UrityAC\Checks\Movement\Fly;
-use OnlyJaiden\UrityAC\Checks\combat\AutoClicker;
 use OnlyJaiden\UrityAC\User;
 use OnlyJaiden\UrityAC\Player\PlayerEvent;
 use pocketmine\utils\SingletonTrait;
@@ -27,7 +26,6 @@ class Main extends PluginBase{
         // Movement checks
         $this->registerEvents(new Speed());
         $this->registerEvents(new Fly());
-        $this->registerEvents(new AutoClicker());
         // Player Event Handler
         $this->registerEvents(new PlayerEvent());
     }
