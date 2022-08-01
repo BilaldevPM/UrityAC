@@ -34,8 +34,9 @@ class Speed implements Listener{
         $x = $event->getFrom()->getX() - $event->getTo()->getX();
         $y = $event->getFrom()->getY() - $event->getTo()->getY();
         $z = $event->getFrom()->getZ() - $event->getTo()->getZ();
+        $xyz = new Vector3($x, $y, $z);
 
-        $player->sendMessage('Vector3= '.Vector3($x, $y, $z));
+        $player->sendMessage('Vector3= '.$xyz);
         $player->sendMessage('X= '.abs($x));
         $player->sendMessage('Z= '.abs($z));
     }

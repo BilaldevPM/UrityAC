@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace OnlyJaiden\UrityAC;
 
-use OnlyJaiden\UrityAC\Checks\Movement\Speed;
-use OnlyJaiden\UrityAC\Checks\Movement\Fly;
 use OnlyJaiden\UrityAC\User;
 use OnlyJaiden\UrityAC\Player\PlayerEvent;
+use OnlyJaiden\UrityAC\Check\Loader;
 use pocketmine\utils\SingletonTrait;
 use pocketmine\player\Player;
 use pocketmine\event\Listener;
@@ -23,9 +22,8 @@ class Main extends PluginBase{
     }
     
     public function onEnable(): void {
-        // Movement checks
-        $this->registerEvents(new Speed());
-        $this->registerEvents(new Fly());
+        $loader = new Loader;
+        $loader->LoadChecks();
         // Player Event Handler
         $this->registerEvents(new PlayerEvent());
     }

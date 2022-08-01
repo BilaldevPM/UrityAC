@@ -4,9 +4,9 @@ namespace OnlyJaiden\UrityAC\Checks;
 
 use pocketmine\event\Listener;
 
-class loader implements Listener{
+class Loader {
 
-    public function onEnable() {
+    public function LoadChecks() {
         $this->registerEvents(new Speed());
         $this->registerEvents(new Fly());
     }
