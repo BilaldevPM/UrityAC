@@ -30,5 +30,13 @@ class Speed implements Listener{
             $data->getPlayerBlockAbove() ||
             $data->getPlayerBlockFast()
         ) return;
+
+        $x = $event->getFrom()->getX() - $event->getTo()->getX();
+        $y = $event->getFrom()->getY() - $event->getTo()->getY();
+        $z = $event->getFrom()->getZ() - $event->getTo()->getZ();
+
+        $player->sendMessage('Vector3= '.Vector3($x, $y, $z));
+        $player->sendMessage('X= '.abs($x));
+        $player->sendMessage('Z= '.abs($z));
     }
 }
