@@ -33,7 +33,7 @@ class PlayerEvent implements Listener{
         }
     }
 
-    public function onPlayerMove(PlayerMoveEvent $event): void{
+    public function AlsoPlayermMovemebt(PlayerMoveEvent $event): void{
         $player = $event->getPlayer();
         $Urity = new UrityPlayer;
 
