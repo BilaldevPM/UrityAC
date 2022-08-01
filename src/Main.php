@@ -28,7 +28,7 @@ class Main extends PluginBase{
         $this->registerEvents(new PlayerEvent());
     }
     
-    private function registerEvents(Listener $listener): void {
+    public function registerEvents(Listener $listener): void {
         $this->getServer()->getPluginManager()->registerEvents($listener, $this);
     }
     

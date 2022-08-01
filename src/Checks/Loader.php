@@ -3,16 +3,17 @@
 namespace OnlyJaiden\UrityAC\Checks;
 
 use pocketmine\event\Listener;
+use OnlyJaiden\UrityAC\Main;
+use OnlyJaiden\UrityAC\Checks\Movement\Speed;
+use OnlyJaiden\UrityAC\Checks\Movement\Fly;
 
 class Loader {
 
     public function LoadChecks() {
-        $this->registerEvents(new Speed());
-        $this->registerEvents(new Fly());
+        $register = new Main;
+        $register->registerEvents(new Speed());
+        $register->registerEvents(new Fly());
     }
 
-    private function registerEvents(Listener $listener): void {
-        $this->getServer()->getPluginManager()->registerEvents($listener, $this);
-    }
 
 }
