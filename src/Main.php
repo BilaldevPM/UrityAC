@@ -6,7 +6,7 @@ namespace OnlyJaiden\UrityAC;
 
 use OnlyJaiden\UrityAC\User;
 use OnlyJaiden\UrityAC\Player\PlayerEvent;
-use OnlyJaiden\UrityAC\Check\Loader;
+use OnlyJaiden\UrityAC\Checks\Loader;
 use pocketmine\utils\SingletonTrait;
 use pocketmine\player\Player;
 use pocketmine\event\Listener;
