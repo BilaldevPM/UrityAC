@@ -10,10 +10,7 @@ use OnlyJaiden\UrityAC\Checks\Movement\Fly;
 class Loader {
 
     public function LoadChecks() {
-        $register = new Main;
-        $register->registerEvents(new Speed());
-        $register->registerEvents(new Fly());
+        Main::getInstance()->registerEvents(new Fly());
+        Main::getInstance()->registerEvents(new Speed());
     }
-
-
 }
