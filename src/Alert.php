@@ -13,12 +13,17 @@ use pocketmine\Server;
 use pocketmine\player\Player;
 
 class Alert {
-    private $point;
+  private $count = [];
+
   public static function alert(string $cheat, Player $player) {
     foreach(Server::getInstance()->getOnlinePlayers() as $staff) {
       if($staff->hasPermission("UrityAC.alerts")) {
-        User::getUser($staff, $cheat, $player);
-        Alert::DiscordAlerts($cheat, $player);
+        if(isset($this->count[$player->getName()])) {
+          User::getUser($staff, $cheat, $player);
+          Alert::DiscordAlerts($cheat, $player);
+        } else {
+          new $count[$player->getName()] = 1;
+        }
       }     
     }  
   }
