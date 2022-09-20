@@ -13,34 +13,32 @@ use pocketmine\Server;
 use pocketmine\player\Player;
 
 class Alert {
-
-  public function alert(string $cheat, string $player): void {
-    $user = new User;
+    private $point;
+  public static function alert(string $cheat, Player $player) {
     foreach(Server::getInstance()->getOnlinePlayers() as $staff) {
       if($staff->hasPermission("UrityAC.alerts")) {
-        $user->getUser($staff, $player, $cheat);
+        User::getUser($staff, $cheat, $player);
+        Alert::DiscordAlerts($cheat, $player);
       }     
     }  
-    $this->DiscordAlerts($cheat, $player);
   }
 
-  private function DiscordAlerts(string $cheat, string $player): void {
-    $config = Main::getInstance()->getConfig();
-    if(!$config->get("webhook.enable")) {
-        return;
-    }
-
+  private static function DiscordAlerts(string $cheat, Player $player) {
+    if(Main::getInstance()->getConfig()->get("webhook.enable") == false) return false;
+    
+    
     $embed = new Embed();
     $embed->setColor(1252377); 
-    $embed->setTitle("AntiCheat Alerts");
-    $embed->addField("Player", $player);
+    $embed->setTitle("Anti Cheat Detection!");
+    $embed->addField("Player", $player->getName());
+    $embed->addField("Ping", strval($player->getNetworkSession()->getPing()));
     $embed->addField("Detection", $cheat);
     $embed->setFooter("UrityAC v1.0.0");
 
     $message = new Message();
     $message->addEmbed($embed);
 
-    $webhook = new Webhook($config->get("webhook.url"));
+    $webhook = new Webhook(Main::getInstance()->getConfig()->get("webhook.url"));
     $webhook->send($message);
   }
 }
