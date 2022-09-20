@@ -22,7 +22,7 @@ class Alert {
           User::getUser($staff, $cheat, $player);
           Alert::DiscordAlerts($cheat, $player);
         } else {
-          new $count[$player->getName()] = 1;
+          new $count[$player->getName()] == 1;
         }
       }     
     }  
