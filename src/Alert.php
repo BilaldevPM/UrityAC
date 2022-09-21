@@ -23,6 +23,11 @@ class Alert {
           Alert::DiscordAlerts($cheat, $player);
         } else {
           new $count[$player->getName()] == 1;
+          $player->sendMessage($this->count[$player->getName()]);
+
+        }
+        if($this->count[$player->getName()] == 3) {
+
         }
       }     
     }  
