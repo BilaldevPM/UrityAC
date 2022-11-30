@@ -27,7 +27,7 @@ class Alert {
 
         }
         if($this->count[$player->getName()] == 3) {
-
+          $player->sendPopup('O No');
         }
       }     
     }  
