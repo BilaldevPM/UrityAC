@@ -7,7 +7,7 @@ src-namespace-prefix: OnlyJaiden\UrityAC
 
 commands:
   alerts:
-    description: Stop getting annoying alerts.
+    description: Disable or Enable Alerts.
     permission: UrityAC.alerts
 
 permissions:
